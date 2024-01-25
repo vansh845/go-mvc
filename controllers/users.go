@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -23,7 +22,6 @@ var people []Person = []Person{
 
 func HandleGetUserbyId(w http.ResponseWriter, r *http.Request) {
 	userId := chi.URLParam(r, "userid")
-	fmt.Println(userId)
 	for i := 0; i < len(people); i++ {
 		if people[i].Id == userId {
 			user, err := json.Marshal(people[i])
