@@ -8,7 +8,7 @@ import (
 
 func UserRoutes(router chi.Router) {
 
-	router.Route("/users", func(r chi.Router) {
+	router.Route("/user", func(r chi.Router) {
 		r.Get("/", controllers.HandleGetAllUserRoute)
 		r.Get("/{userid}", controllers.HandleGetUserbyId)
 	})
